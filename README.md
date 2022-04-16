@@ -1,6 +1,6 @@
 # cosplaydeathmatch
 Array logic implemented to programatically manipulate a PowerPoint presentation through VBA macros. 
-Co-developed by Andrey Zholudok, Alison Bird
+Co-developed by Andrey Zholudok, Alison Bird in 2018
 
 ## Table of Contents
 1. Overview
@@ -22,9 +22,13 @@ Requested specifications:
 -- Round 2 is only for 32 contentants; skip for 16 contestants
 -- Must cover: Brackets A, B, C, D
 * Fight card to show the two competitors currently fighting
-* Game state must be stored globally and be recoverable in the event of a system crash
 
-## Solutions
+## Solution
+
+* Create a maintain an array of fight results and a fight counter
+* When loading a bracket or fight screen, use utilities to pull the fighter image data and replace the image data for the placeholder shapes on the slide
+* When a fight is done, right the results to the fight array and increment the fight counter
+* All solution code is stored in the macro-enabled PowerPoint file, but has been extracted for ease of reference
 
 ## Future Design Considerations
 Microsoft PowerPoint does not respond well to dynamically manipulating the image data in shape options and transitioning between slides. The image data is frequently cached improperly. 
